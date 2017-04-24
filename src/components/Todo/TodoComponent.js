@@ -10,7 +10,7 @@ import {
   removeTodo 
 } from '../../redux/todo/actions'; 
  
-const VisibleTodoApp = connect(
+const VisibleTodoComponent = connect(
   (state) => {
     return {
       todos: state.todos
@@ -24,7 +24,7 @@ const VisibleTodoApp = connect(
     }
   }
 )
-class TodoApp extends React.Component {
+class TodoComponent extends React.Component {
 
     constructor(props) {
         super();
@@ -52,4 +52,4 @@ class TodoApp extends React.Component {
 
 }
 
-export default VisibleTodoApp(TodoApp);
+export default VisibleTodoComponent(TodoComponent);
