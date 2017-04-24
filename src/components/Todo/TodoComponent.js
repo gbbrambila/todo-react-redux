@@ -42,11 +42,15 @@ class TodoComponent extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>React - Redux</h1>
-                <NewTodo addTodo={ this.props.addTodo } />
-                <ul> { this.listTodos() } </ul>
-            </div>
+          <div className="container">
+            <div className="row">
+                <div className="col-md-12 text-left">
+                  <h1>Todo React Redux</h1>
+                </div>
+            </div>            
+            <NewTodo addTodo={ this.props.addTodo } />
+            { this.listTodos() }
+          </div>
         )
     }
 

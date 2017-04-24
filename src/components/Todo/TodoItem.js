@@ -15,12 +15,22 @@ class TodoItem extends React.Component {
     }
 
     render() {
-        return (
-            <li className={ this.props.todo.completed ? 'completed' : 'todoDo'}> 
-                { this.props.todo.id } - { this.props.todo.text }                 
-                <button onClick={ () => this.handleToggleTodo() }>Toggle</button>
-                <button onClick={ () => this.handleRemovoTodo() }>x</button> 
-            </li>
+        return (            
+            <div className="row"  style={ {marginTop: '10px'} }>
+                <div className="col-xs-1 col-sm-1 col-md-1">    
+                    <button className="btn btn-default" onClick={ () => this.handleToggleTodo() }>
+                        <span className="glyphicon glyphicon glyphicon-ok"></span>
+                    </button>
+                </div>             
+                <div className="col-xs-10 col-sm-10 col-md-10" style={ {textDecoration: this.props.todo.completed ? 'line-through': 'none'} } > 
+                    { this.props.todo.text }
+                </div>
+                <div className="col-xs-1 col-sm-1 col-md-1">                    
+                    <button className="btn btn-default" onClick={ () => this.handleRemovoTodo() }>
+                        <span className="glyphicon glyphicon-remove"></span>                        
+                    </button>
+                </div>
+            </div>       
         )
     }
 }
